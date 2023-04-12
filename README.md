@@ -10,6 +10,8 @@ mamba create --name  lbp1 -c conda-forge -c bioconda -c ohsu-comp-bio -c anacond
 
 pip install --upgrade fastremap
 
+or use the Ben_startup_VM file and remove all the irrelevant bits.
+
 Step 1: 2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb
 
 Use this script to run Local Binary Pattern over an image.
