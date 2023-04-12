@@ -24,5 +24,5 @@ Combines the different LBP conditions into one file for easier analysis.
 
 Step 3: 2022-11-01_UMAP_each_image_separately.ipynb
 
-Run clustering and analysis.
+Run clustering and analysis in an unsupervised way.
 
