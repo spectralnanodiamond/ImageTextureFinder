@@ -6,7 +6,7 @@ https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
 To install the environment, use the Ben_startup_VM file and remove all the irrelevant bits.
 
-Step 1: 2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb
+Step 1: 2021-07-06_Local_binary_pattern_on_images.ipynb or 2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb
 
 Use this script to run Local Binary Pattern over an image.
 This outputs individual files for each condition where the x, y coordinates are for each patch and the z coordinate contains the LBP texture values
