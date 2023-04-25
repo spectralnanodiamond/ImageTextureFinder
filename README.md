@@ -10,17 +10,17 @@ then run
 then
 `conda activate lbp3a`
 
-Step 1: Run 2021-07-06_Local_binary_pattern_on_images.ipynb or 2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb
+Step 1: Run `2021-07-06_Local_binary_pattern_on_images.ipynb` or `2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb`
 
 Use this script to run Local Binary Pattern over an image.
 This outputs individual files for each condition where the x, y coordinates are for each patch and the z coordinate contains the LBP texture values
 
 
-Step 2: 2022-10-28b_Creating_patch_LBP_signatures_with_channels_from_numpy_sources.ipynb
+Step 2: Run `2022-10-28b_Creating_patch_LBP_signatures_with_channels_from_numpy_sources.ipynb`
 
 Combines the different LBP conditions into one file for easier analysis.
 
-Step 3: 2022-11-01_UMAP_each_image_separately.ipynb
+Step 3: Run `2022-11-01_UMAP_each_image_separately.ipynb`
 
 Run clustering and analysis in an unsupervised way.
 
