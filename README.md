@@ -4,7 +4,11 @@ A project to create an easy-to-use way of finding areas of common patterns and s
 A test image file is current located here:
 https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
-To install the environment, use the Ben_startup_VM file and remove all the irrelevant bits.
+To install the environment, download the environment_lbp3a.yml file
+then run 
+conda env create -f environment_lbp3a.yml
+then
+conda activate lbp3a
 
 Step 1: 2021-07-06_Local_binary_pattern_on_images.ipynb or 2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb
 
