@@ -6,9 +6,9 @@ https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
 To install the environment, download the environment_lbp3a.yml file
 then run 
-`conda env create -f environment_lbp3a.yml`
+`conda env create -f environment_lbp3b.yml`
 then
-`conda activate lbp3a`
+`conda activate lbp3b`
 
 Step 1: Run `2021-07-06_Local_binary_pattern_on_images.ipynb` or `2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb`
 
