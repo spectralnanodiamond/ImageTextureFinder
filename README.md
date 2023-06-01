@@ -4,7 +4,7 @@ A project to create an easy-to-use way of finding areas of common patterns and s
 A test image file is current located here:
 https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
-To install the environment, download the environment_lbp3b.yml file
+To install the environment, download the environment_lbp3b.yml file or the environment_lbp3b_windows.yml file
 then run 
 `conda env create -f environment_lbp3b.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
 then
