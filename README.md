@@ -6,7 +6,7 @@ https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
 To install the environment, download the environment_lbp3b.yml file
 then run 
-`conda env create -f environment_lbp3b.yml`
+`conda env create -f environment_lbp3b.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
 then
 `conda activate lbp3b`
 
@@ -16,9 +16,9 @@ Use this script to run Local Binary Pattern over an image.
 This outputs individual files for each condition where the x, y coordinates are for each patch and the z coordinate contains the LBP texture values
 
 
-Step 2: Run `2022-10-28b_Creating_patch_LBP_signatures_with_channels_from_numpy_sources.ipynb`
+Step 2: Run `2021-07-28_Creating_patch_LBP_signatures_flexible_LBP_sources.ipynb` or `2022-10-28b_Creating_patch_LBP_signatures_with_channels_from_numpy_sources.ipynb`
 
-Combines the different LBP conditions into one file for easier analysis.
+Combines the different LBP conditions into one file for easier analysis. Notebook used in this step must be the one close in date to the notebook used in step 1.
 
 Step 3: Run `2022-11-01_UMAP_each_image_separately.ipynb`
 
