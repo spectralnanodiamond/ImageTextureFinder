@@ -4,11 +4,13 @@ A project to create an easy-to-use way of finding areas of common patterns and s
 A test image file is current located here:
 https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
-To install the environment, download the environment_lbp3b.yml file or the environment_lbp3b_windows.yml file
+To install the environment, download the environment_lbp3c.yml file or the environment_lbp3b_windows.yml file
 then run 
-`conda env create -f environment_lbp3b.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
+`conda env create -f environment_lbp3c.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
 then
-`conda activate lbp3b`
+`conda activate lbp3c`
+or
+`conda activate lbp3b_windows`
 
 Step 1: Run `2021-07-06_Local_binary_pattern_on_images.ipynb` or `2022-10-28_Parallel_Local_binary_pattern_on_images_with_channels.ipynb`
 
