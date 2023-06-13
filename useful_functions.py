@@ -10,7 +10,7 @@ import numpy as np
 from IPython.display import clear_output
 import matplotlib.pyplot as plt
 from copy import deepcopy
-from vispy.color import Colormap
+#from vispy.color import Colormap
 from IPython.display import display
 from matplotlib import colors
 from matplotlib.colors import to_hex
@@ -572,7 +572,7 @@ def cmap_napari(list_of_colors):
     #viewer = napari.Viewer() 
     #this_cmap = cmap_napari(['#000000', 'yellow', (1.0,1.0,1.0)])
     #viewer.add_image(cellclass_pyr, colormap=('this_cmap', this_cmap), contrast_limits=[0,4])
-    
+    from vispy.color import Colormap
     rgb_list_of_colors = []
     for each in list_of_colors:
         if type(each) == str:
@@ -807,7 +807,7 @@ def cmap_threshold(lower, mid, upper, color1, color2):
     #viewer = napari.Viewer()
     #my_cmap = uf.cmap_threshold(100, 1000, 2000, colors.to_rgb('blue'), colors.to_rgb('orange'))
     #viewer.add_image(myarray, colormap=('my_cmap', my_cmap), contrast_limits=[100,2000])
-    
+    from vispy.color import Colormap
     
     my_colormap_list = []
     
@@ -1113,7 +1113,7 @@ def return_color_scale(key, show=True):
     if key == 'block_colors_for_labels_against_white_small_points':
         """
         This is for labels that don't mix and but look gray as the points are 
-        small. Used for IVY GAP project
+        small. Used for IVY GAP project as colorblind_optimized
         """
         yy = [(1.0, 0.6, 0.6, 1.0),
              (0.0, 0.39215686274509803, 0.0, 1.0),
@@ -1383,7 +1383,9 @@ def convert_rgb_to_rgba_without_transparency(img):
     return rgba_image
 
 
-def get_optimal_overlap_of_classes(observed, gt, elements_to_remove_from_observed=[-1]):
+def get_optimal_overlap_of_classes(observed, gt, 
+                                   elements_to_remove_from_observed=[-1],
+                                   elements_to_remove_from_gt = []):
     import numba_funcs as nf
     import fastremap
     """
@@ -1412,12 +1414,22 @@ def get_optimal_overlap_of_classes(observed, gt, elements_to_remove_from_observe
     #This helps get the data in a consistent format
     observed_np = np.array(observed).ravel()
     gt_np = np.array(gt).ravel()
+    if True:
+        print(observed_np.shape, gt_np.shape)
 
     #This removes both observed and gt locations where observed is in elements_to_remove_from_observed
     observed_to_remove = np.isin(observed_np, elements_to_remove_from_observed)
+    if True:
+        print(observed_to_remove.shape)
     if observed_to_remove.any():
         observed_np = observed_np[~observed_to_remove]
         gt_np = gt_np[~observed_to_remove]
+
+    #This removes both observed and gt locations where gt is in elements_to_remove_from_gt
+    gt_to_remove = np.isin(gt_np, elements_to_remove_from_gt)
+    if gt_to_remove.any():
+        observed_np = observed_np[~gt_to_remove]
+        gt_np = gt_np[~gt_to_remove]
     
     
     #This removes both observed and gt locations where observed is -1
@@ -1479,3 +1491,53 @@ def get_optimal_overlap_of_classes(observed, gt, elements_to_remove_from_observe
             out_dict[OBS_inv_dict[a]] = np.nan
 
     return out_dict, overlap_score
+
+
+def intlabels_and_rgblabels_to_dict(intlabels, rgblabels, list_to_ignore = [0], divide_by_255 = False):
+    """
+    A function that takes 2D intlabels and rgblabels and makes the link.
+    Not optimised or compiled - iterating over a numpy array, so not 
+    for use with large arrays as it will be slow. 
+
+    Parameters
+    ----------
+    intlabels : numpy ints
+        2D array of ints (can be XY or YX) that indicate classes on an image
+    rgblabels : numpy anything
+        XYC or YXC array of numpy that looks like a rgb image or channel image
+        that matches the intlabels in XY coordinates, just looks differently
+    list_to_ignore : list, optional
+        This is the list of things to not add to the dictionary. 
+        The default is [0].
+    divide_by_255 : Bool, optional
+        A decision of whether to by 255 for the output colors. 
+        Napari needs colors in range 0-1 so if rgblabels is in 0-255 then
+        this should be set to True
+        The default is False.
+
+    Returns
+    -------
+    int_to_rgb_dict : dict
+        A dictionary that links the ints provided by intlabels to the colors
+        provided by rgblabels of the same image
+        
+
+    """
+    int_to_rgb_dict = {}
+    if divide_by_255:
+        for i in range(intlabels.shape[0]):
+            for j in range(intlabels.shape[1]):
+                if intlabels[i,j] in int_to_rgb_dict.keys():
+                    continue
+                else:
+                    int_to_rgb_dict[intlabels[i,j]] = rgblabels[i,j]/255
+    else:
+        for i in range(intlabels.shape[0]):
+            for j in range(intlabels.shape[1]):
+                if intlabels[i,j] in int_to_rgb_dict.keys():
+                    continue
+                else:
+                    int_to_rgb_dict[intlabels[i,j]] = rgblabels[i,j]
+    for each in list_to_ignore:
+        del int_to_rgb_dict[each]
+    return int_to_rgb_dict
