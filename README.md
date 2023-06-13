@@ -26,4 +26,4 @@ Step 3: Run `2022-11-01_UMAP_each_image_separately.ipynb` or `2022-11-10_UMAP_an
 Either of these can be run independently of which options you chose above
 Run clustering and analysis in an unsupervised way.
 
-Step 4 (optiuonal): If you ran `2022-11-10_UMAP_and_clustering_all_12_images` then you will have output some clusters that can be displayed on an image that can be viewed in napari with this script: `2022-11-10d_View_cluster_masks_in_napari.ipynb`
+Step 4 (optional): If you ran `2022-11-10_UMAP_and_clustering_all_12_images` then you will have output some clusters that can be displayed on an image that can be viewed in napari with this script: `2022-11-10d_View_cluster_masks_in_napari.ipynb`
