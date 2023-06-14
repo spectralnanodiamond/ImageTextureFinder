@@ -1414,13 +1414,9 @@ def get_optimal_overlap_of_classes(observed, gt,
     #This helps get the data in a consistent format
     observed_np = np.array(observed).ravel()
     gt_np = np.array(gt).ravel()
-    if True:
-        print(observed_np.shape, gt_np.shape)
 
     #This removes both observed and gt locations where observed is in elements_to_remove_from_observed
     observed_to_remove = np.isin(observed_np, elements_to_remove_from_observed)
-    if True:
-        print(observed_to_remove.shape)
     if observed_to_remove.any():
         observed_np = observed_np[~observed_to_remove]
         gt_np = gt_np[~observed_to_remove]
