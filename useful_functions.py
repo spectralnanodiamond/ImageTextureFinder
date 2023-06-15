@@ -1137,6 +1137,32 @@ def return_color_scale(key, show=True):
                 make_Ramp_flexible([each, each])
                 plt.show()
 
+    if key == 'block_colors_for_labels_against_white_small_points_white_first':
+        """
+        This is for labels that don't mix and but look gray as the points are 
+        small. Used for IVY GAP project as colorblind_optimized / 'white_first'
+        """
+        yy = [(1.0, 0.6, 0.6, 1.0),
+             (0.0, 0.39215686274509803, 0.0, 1.0),
+             (1.0, 0.0784313725490196, 0.5764705882352941, 1.0),
+             (0.65, 0.45, 0.04, 1.0), #(0.7215686274509804, 0.5254901960784314, 0.043137254901960784, 1.0)
+             (1.0, 0.5490196078431373, 0.0, 1.0),
+             (0.0, 0.7490196078431373, 1.0, 1.0),
+             (0.0, 0.0, 1.0, 1.0),
+             (1.0, 0.8431372549019608, 0.0, 1.0),
+             (0.5019607843137255, 0.0, 0.5019607843137255, 1.0),
+             (0.0, 0.0, 0.33, 1.0),
+                (0.0, 0.0, 0.0, 1.0),
+                 (0.33, 0.33, 0.33, 1.0),
+                 (0.66, 0.66, 0.66, 1.0),
+                 (1.0, 1.0, 1.0, 1.0)]
+        yy_hex = [to_hex(each) for each in yy]
+        out = yy_hex
+        if show:
+            for i, each in enumerate(out):
+            #    print(i)
+                make_Ramp_flexible([each, each])
+                plt.show()
                 
     if key == 'two_colors_for_overlap_plotting':
         """This is for situations where you want two overlapping colors in 
