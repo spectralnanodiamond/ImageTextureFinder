@@ -12,6 +12,8 @@ then
 or
 `conda activate lbp3b_windows`
 
+(Side note: if you would like to use ndpi files as input, then run `apt install openslide-tools` before creating the environments above)
+
 Step 1: Run `2021-07-06_Local_binary_pattern_on_images.ipynb`
 
 Use this script to run Local Binary Pattern over an image.
