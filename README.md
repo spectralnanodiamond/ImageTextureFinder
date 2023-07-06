@@ -5,7 +5,7 @@ Ben's attempt to make a parallel version using joblib is in the other branch 'B_
 
 A test image file is current located here:
 https://zenodo.org/record/7821268#.ZDaHS3bMIuU
-(this would require changes to the code, or you can use the image provided by alternative means)
+(this would require changes to the code, or you can use the image provided in private google drive)
 
 To install the environment, download the environment_lbp3c.yml file or the environment_lbp3b_windows.yml file
 then run 
