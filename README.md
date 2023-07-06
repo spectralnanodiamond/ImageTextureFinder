@@ -1,6 +1,8 @@
 # ImageTextureFinder
 A project to create an easy-to-use way of finding areas of common patterns and structures within an image. Should work on any image, designed for use on any biological images including DAPI, IMC and H&E.
 
+Ben's attempt to make a parallel version using joblib is in the other branch 'B_parallel'. 
+
 A test image file is current located here:
 https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
