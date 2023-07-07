@@ -7,6 +7,8 @@ A test image file is current located here:
 https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 (this would require changes to the code, or you can use the image provided in private google drive)
 
+At the moment the pipeline is set up to run without a groundtruth included by commenting out the relevant sections. 
+
 To install the environment, download the environment_lbp3c.yml file or the environment_lbp3b_windows.yml file
 then run 
 `conda env create -f environment_lbp3c.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
