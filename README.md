@@ -9,11 +9,11 @@ https://zenodo.org/record/7821268#.ZDaHS3bMIuU
 
 At the moment the pipeline is set up to run without a groundtruth included by commenting out the relevant sections. 
 
-To install the environment, download the environment_lbp3c.yml file or the environment_lbp3b_windows.yml file
+To install the environment, download the environment_lbp3d.yml file or the environment_lbp3b_windows.yml file
 then run 
-`conda env create -f environment_lbp3c.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
+`conda env create -f environment_lbp3d.yml` or on windows `conda env create -f environment_lbp3b_windows.yml`
 then
-`conda activate lbp3c`
+`conda activate lbp3d`
 or
 `conda activate lbp3b_windows`
 
