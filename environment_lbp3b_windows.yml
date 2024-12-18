@@ -1,6 +1,7 @@
 name: lbp3b_windows
 channels:
-  - defaults
+#  - defaults
+   - conda-forge
 dependencies:
   - _libgcc_mutex=0.1
   - ca-certificates=2023.01.10
